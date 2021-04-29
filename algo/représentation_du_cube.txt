@@ -1,3 +1,4 @@
+typedef enum{LEFT, FRONT, RIGHT, BACK,  UP, DOWN} T_SIDE;
 typedef enum{R, B, G, W, Y, O, LG} T_COLOR;
 
 Fonction create_ligne(): ligne[3]
@@ -28,4 +29,19 @@ Début
         rubiks[indice_de_la_face] <- create_face()
     Fin Pour
     retourner rubiks
+Fin
+
+Fonction init_rubiks(rubiks[6][3][3]: tableau de tableau de T_COLOR): Ø
+Paramètres copiés: Ø
+Paramètres modifiés: rubiks[6][3][3]: tableau de tableau de T_COLOR
+Variables locales:
+Début
+    // LEFT, FRONT, RIGHT, BACK,  UP, DOWN
+    Pour face <- LEFT A DOWN Faire
+        Pour indice <- 1 A 3 Faire
+             Pour element <- 1 A 3 Faire
+                rubiks[face][ligne][element] <- face
+             Fin Pour
+        Fin Pour
+    Fin Pour
 Fin
