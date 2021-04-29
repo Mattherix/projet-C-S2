@@ -1,0 +1,31 @@
+typedef enum{R, B, G, W, Y, O, LG} T_COLOR;
+
+Fonction create_ligne(): ligne[3]
+Paramètres modifiés: Ø
+Paramètres copiés:  Ø
+Variables locales: ligne[3]: tableau de T_COLOR
+Début
+    retourner ligne
+Fin
+
+Fonction create_face(): face[3][3]
+Paramètres modifiés: Ø
+Paramètres copiés:  Ø
+Variables locales: face[3]: tableau de pointeur
+Début
+    Pour indice_ligne <- 1 A 3 Faire
+        face[indice_ligne] <- create_ligne()
+    Fin Pour
+    retourner face
+Fin
+
+Fonction create_rubiks(): rubiks[6][3][3]
+Paramètres modifiés: Ø
+Paramètres copiés:  Ø
+Variables locales: rubiks[6]: tableau de pointeur
+Début
+    Pour indice_de_la_face <- 1 A 6 Faire
+        rubiks[indice_de_la_face] <- create_face()
+    Fin Pour
+    retourner rubiks
+Fin
