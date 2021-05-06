@@ -2,7 +2,7 @@
 #include "colors.h"
 
 typedef enum {FRONT, BACK, UP, DOWN, RIGHT, LEFT} T_SIDE;
-typedef enum {R='R', B='B', G='G', W='W', Y='Y', O='O'} T_COLOR;
+typedef enum {R='R', B='B', G='G', W='W', Y='Y', O='O', LG='#'} T_COLOR;
 
 typedef struct Face{
     T_SIDE side;
