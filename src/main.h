@@ -5,4 +5,13 @@
 #ifndef PROJET_C_MAIN_H
 #define PROJET_C_MAIN_H
 
+typedef enum {FRONT, BACK, UP, DOWN, RIGHT, LEFT} T_SIDE;
+typedef enum {HALF=1, QUARTER=2} R_TYPE;
+
+typedef struct Face{
+    T_SIDE side;
+    T_COLOR face[3][3];
+} Face;
+
+
 #endif //PROJET_C_MAIN_H

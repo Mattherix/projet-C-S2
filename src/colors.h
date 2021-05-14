@@ -17,6 +17,16 @@
 #ifndef PROJECT_C_COLOR_H
 #define PROJECT_C_COLOR_H
 
+typedef enum {
+    R='R',
+    B='B',
+    G='G',
+    W='W',
+    Y='Y',
+    O='O',
+    LG='#'
+} T_COLOR;
+
 #ifdef __unix__
     #define red    "\033[31m"
     #define blue   "\033[34m"
