@@ -3,6 +3,7 @@
 
 typedef enum {FRONT, BACK, UP, DOWN, RIGHT, LEFT} T_SIDE;
 typedef enum {R='R', B='B', G='G', W='W', Y='Y', O='O', LG='#'} T_COLOR;
+typedef enum {HALF=1, QUARTER=2} R_TYPE;
 
 typedef struct Face{
     T_SIDE side;
