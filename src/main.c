@@ -3,10 +3,9 @@
 #include "enum.c"
 
 
-
 int main() {
     T_COLOR c = R;
-    printf("%d", select_color(c));
+    printf("%d\n", select_color(c));
 
     Face rubiks;
     rubiks.side = FRONT;
