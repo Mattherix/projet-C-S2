@@ -19,5 +19,7 @@ int main(void) {
         }
     }
 
+    free_rubiks(rubiks);
+
     return 0;
 }

@@ -32,3 +32,11 @@ void init_rubiks(Face* rubiks[6]) {
         }
     }
 }
+
+void free_rubiks(Face* rubiks[6]) {
+    for (int i = FRONT; i <= LEFT; ++i) {
+        free(rubiks[i]);
+    }
+    // No need to free the list of pointer, already done, else we have a double free error
+    rubiks = NULL;
+}
