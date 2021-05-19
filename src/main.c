@@ -4,11 +4,7 @@
 #include "cube.c"
 
 
-int main() {
-    T_COLOR c = R;
-    // printf("%d\n", select_color(c));
-
-    // printf("%ld", sizeof(Face) * 6);
+int main(void) {
     Face **rubiks = create_rubiks();
 
     printf("%d", rubiks[2]->side);

@@ -22,3 +22,13 @@ Face** create_rubiks() {
     }
     return rubiks;
 }
+
+void init_rubiks(Face* rubiks[6]) {
+    for (int side = FRONT; side <= LEFT; ++side) {
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                rubiks[side]->face[i][j] = get_side_color(side);
+            }
+        }
+    }
+}
