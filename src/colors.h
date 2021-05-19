@@ -18,11 +18,11 @@
 #define PROJECT_C_COLOR_H
 
 typedef enum {
-    R='R',
-    B='B',
-    G='G',
     W='W',
     Y='Y',
+    B='B',
+    G='G',
+    R='R',
     O='O',
     LG='#'
 } T_COLOR;
