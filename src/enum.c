@@ -1,5 +1,5 @@
 #include "enum.h"
-#include "colors.h"
+#include "color.h"
 
 int select_color(T_COLOR color) {
     return color;
@@ -8,16 +8,16 @@ T_COLOR get_side_color(T_SIDE side) {
     T_COLOR color;
     switch (side) {
         case FRONT:
-            color = W;
+            color = G;
             break;
         case BACK:
-            color = Y;
-            break;
-        case UP:
             color = B;
             break;
+        case UP:
+            color = W;
+            break;
         case DOWN:
-            color = G;
+            color = Y;
             break;
         case RIGHT:
             color = R;
