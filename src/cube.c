@@ -7,14 +7,16 @@ Face* create_face(int side) {
     Face *face = malloc(sizeof(Face));
     face->side = side;
 
+    blank_face(face);
+    return face;
+}
+void blank_face(Face *face) {
     for (int j = 0; j < 3; ++j) {
         for (int k = 0; k < 3; ++k) {
             face->face[j][k] = LG;
         }
     }
-    return face;
 }
-
 Face** create_rubiks() {
     Face **rubiks = malloc(sizeof(Face) * 6);
     for (int i = FRONT; i <= LEFT; ++i) {
@@ -30,6 +32,11 @@ void init_rubiks(Face* rubiks[6]) {
                 rubiks[side]->face[i][j] = get_side_color(side);
             }
         }
+    }
+}
+void blank_rubiks(Face* rubiks[6]) {
+    for (int side = FRONT; side <= LEFT; ++side) {
+        blank_face(rubiks[side]);
     }
 }
 

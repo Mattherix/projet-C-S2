@@ -8,6 +8,7 @@
 #define PROJECT_C_CUBE_H
 
 Face* create_face(int side);
+void blank_face(Face *face);
 Face** create_rubiks(void);
 void init_rubiks(Face* rubiks[6]);
 void display_rubiks(Face* rubiks[6]);
