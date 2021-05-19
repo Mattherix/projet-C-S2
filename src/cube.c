@@ -1,7 +1,9 @@
 #include <stdlib.h>
-#include "cube.h"
+#include <stdbool.h>
 #include "main.h"
-#include "colors.h"
+#include "cube.h"
+#include "color.c"
+#include "enum.c"
 
 Face* create_face(int side) {
     Face *face = malloc(sizeof(Face));
@@ -34,6 +36,31 @@ void init_rubiks(Face* rubiks[6]) {
         }
     }
 }
+
+void display_array_face(Face* rubiks[6], T_SIDE side[], int lenght, bool space) {
+    for (int i = 0; i < 3; ++i) {
+        if (space) {
+            printf("      ");
+        }
+        for (int index = 0; index < lenght; ++index) {
+            for (int j = 0; j < 3; ++j) {
+                printf("%s %c%s", get_color_code(rubiks[side[index]]->face[j][i]), rubiks[side[index]]->face[i][j], NONE);
+            }
+        }
+        printf("\n");
+    }
+}
+
+void display_rubiks(Face* rubiks[6]) {
+    T_SIDE ligne1[] = {UP};
+    T_SIDE ligne2[] = {LEFT, FRONT, RIGHT, BACK};
+    T_SIDE ligne3[] = {DOWN};
+
+    display_array_face(rubiks, ligne1, 1, true);
+    display_array_face(rubiks, ligne2, 4, false);
+    display_array_face(rubiks, ligne3, 1, true);
+}
+
 void blank_rubiks(Face* rubiks[6]) {
     for (int side = FRONT; side <= LEFT; ++side) {
         blank_face(rubiks[side]);

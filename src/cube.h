@@ -11,6 +11,7 @@ Face* create_face(int side);
 void blank_face(Face *face);
 Face** create_rubiks(void);
 void init_rubiks(Face* rubiks[6]);
+void display_array_face(Face* rubiks[6], T_SIDE side[], int lenght, bool space);
 void display_rubiks(Face* rubiks[6]);
 void blank_rubiks(Face* rubiks[6]);
 void fill_rubiks(Face* rubiks[6]);
