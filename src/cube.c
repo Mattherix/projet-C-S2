@@ -20,7 +20,7 @@ void blank_face(Face *face) {
 Face** create_rubiks() {
     Face **rubiks = malloc(sizeof(Face) * 6);
     for (int side = FRONT; side <= LEFT; ++side) {
-        rubiks[i] = create_face(side);
+        rubiks[side] = create_face(side);
     }
     return rubiks;
 }
