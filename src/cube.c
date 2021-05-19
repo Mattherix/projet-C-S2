@@ -19,8 +19,8 @@ void blank_face(Face *face) {
 }
 Face** create_rubiks() {
     Face **rubiks = malloc(sizeof(Face) * 6);
-    for (int i = FRONT; i <= LEFT; ++i) {
-        rubiks[i] = create_face(i);
+    for (int side = FRONT; side <= LEFT; ++side) {
+        rubiks[i] = create_face(side);
     }
     return rubiks;
 }
@@ -41,8 +41,8 @@ void blank_rubiks(Face* rubiks[6]) {
 }
 
 void free_rubiks(Face* rubiks[6]) {
-    for (int i = FRONT; i <= LEFT; ++i) {
-        free(rubiks[i]);
+    for (int side = FRONT; side <= LEFT; ++side) {
+        free(rubiks[side]);
     }
     // No need to free the list of pointer, already done, else we have a double free error
     rubiks = NULL;
