@@ -38,6 +38,7 @@ typedef enum {
     #define NONE   "\033[0m"
 #endif
 
+char* get_color_code(T_COLOR color);
 
 #endif //PROJECT_C_COLOR_H
 
