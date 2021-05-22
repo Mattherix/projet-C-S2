@@ -8,7 +8,7 @@
 #define PROJECT_C_CUBE_H
 
 Face* create_face(int side);
-void blank_face(Face *face);
+void blank_face(Face *face, T_SIDE side);
 Face** create_rubiks(void);
 void init_rubiks(Face* rubiks[6]);
 void display_array_face(Face* rubiks[6], T_SIDE side[], int lenght, bool space);

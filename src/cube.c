@@ -9,15 +9,16 @@ Face* create_face(int side) {
     Face *face = malloc(sizeof(Face));
     face->side = side;
 
-    blank_face(face);
+    blank_face(face, side);
     return face;
 }
-void blank_face(Face *face) {
+void blank_face(Face *face, T_SIDE side) {
     for (int j = 0; j < 3; ++j) {
         for (int k = 0; k < 3; ++k) {
             face->face[j][k] = LG;
         }
     }
+    face->face[1][1] = get_side_color(side);
 }
 Face** create_rubiks() {
     Face **rubiks = malloc(sizeof(Face) * 6);
