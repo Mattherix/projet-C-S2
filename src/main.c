@@ -15,7 +15,7 @@ int main(void) {
     display_rubiks(rubiks);
     printf("\n");
 
-    down_clockwise(rubiks, QUARTER);
+    right_clockwise(rubiks, QUARTER);
 
     display_rubiks(rubiks);
     printf("\n");
