@@ -100,6 +100,33 @@ void up_clockwise(Face* rubiks[6], R_TYPE type) {
         rubiks[LEFT]->face[0][i] = front_side_value[i];
     }
 }
-void down_clockwise(Face* rubiks[6], R_TYPE type);
+void down_clockwise(Face* rubiks[6], R_TYPE type) {
+    // Check the R_TYPE
+    if (type == HALF) {
+        back_clockwise(rubiks, QUARTER);
+    }
+
+    rotate_center_face(rubiks, DOWN);
+
+    // We copy the value of the 3 cell on the first side
+    T_COLOR front_side_value[3];
+    for (int i = 0; i < 3; ++i) {
+        front_side_value[i] = rubiks[FRONT]->face[2][i];
+    }
+
+    // We rotate the other face
+    for (int i = 0; i < 3; ++i) {
+        rubiks[FRONT]->face[2][i] = rubiks[RIGHT]->face[2][i];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[RIGHT]->face[2][i] = rubiks[BACK]->face[2][i];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[BACK]->face[2][i] = rubiks[LEFT]->face[2][i];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[LEFT]->face[2][i] = front_side_value[i];
+    }
+}
 void right_clockwise(Face* rubiks[6], R_TYPE type);
 void left_clockwise(Face* rubiks[6], R_TYPE type);
