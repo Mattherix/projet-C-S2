@@ -10,12 +10,12 @@ int main(void) {
     init_rubiks(rubiks);
 
     rubiks[BACK]->face[0][0] = R;
-    rubiks[RIGHT]->face[0][0] = B;
+    rubiks[LEFT]->face[0][0] = B;
 
     display_rubiks(rubiks);
     printf("\n");
 
-    right_clockwise(rubiks, QUARTER);
+    left_clockwise(rubiks, QUARTER);
 
     display_rubiks(rubiks);
     printf("\n");
