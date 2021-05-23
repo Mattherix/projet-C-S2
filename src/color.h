@@ -12,7 +12,6 @@
 // https://stackoverflow.com/questions/32573654/is-there-a-way-to-create-an-orange-color-from-ansi-escape-characters
 //
 // https://www.man7.org/linux/man-pages/man5/terminal-colors.d.5.html
-// todo: Add windows and mac support.
 
 #ifndef PROJECT_C_COLOR_H
 #define PROJECT_C_COLOR_H
@@ -36,6 +35,15 @@ typedef enum {
     #define ORANGE "\033[35m" // todo: Find a way to use orange, here it's purple
 
     #define NONE   "\033[0m"
+#else
+    #define RED    ""
+    #define BLUE   ""
+    #define GREEN  ""
+    #define WHITE  ""
+    #define YELLOW ""
+    #define ORANGE ""
+
+    #define NONE   ""
 #endif
 
 char* get_color_code(T_COLOR color);
