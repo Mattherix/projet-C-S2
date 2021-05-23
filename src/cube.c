@@ -5,7 +5,7 @@
 #include "color.c"
 #include "enum.c"
 
-Face* create_face(int side) {
+Face* create_face(T_SIDE side) {
     Face *face = malloc(sizeof(Face));
     face->side = side;
 

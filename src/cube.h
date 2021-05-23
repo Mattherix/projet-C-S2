@@ -9,7 +9,7 @@
 
 #include <stdbool.h>
 
-Face* create_face(int side);
+Face* create_face(T_SIDE side);
 void blank_face(Face *face, T_SIDE side);
 Face** create_rubiks(void);
 void init_rubiks(Face* rubiks[6]);
