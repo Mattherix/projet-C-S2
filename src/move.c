@@ -14,6 +14,35 @@ void rotate_center_face(Face* rubiks[6], T_SIDE side) {
     rubiks[side] = face;
 }
 
+void front_clockwise(Face* rubiks[6], R_TYPE type) {
+    // Check the R_TYPE
+    if (type == HALF) {
+        back_clockwise(rubiks, QUARTER);
+    }
+
+    rotate_center_face(rubiks, FRONT);
+
+    // We copy the value of the 3 cell on the first side
+    T_COLOR up_side_value[3];
+    for (int i = 0; i < 3; ++i) {
+        up_side_value[i] = rubiks[UP]->face[0][i];
+    }
+
+    // We rotate the other face
+    for (int i = 0; i < 3; ++i) {
+        rubiks[UP]->face[2][i] = rubiks[RIGHT]->face[i][0];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[RIGHT]->face[2-i][0] = rubiks[DOWN]->face[0][i];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[DOWN]->face[0][i] = rubiks[LEFT]->face[i][2];
+    }
+    for (int i = 0; i < 3; ++i) {
+        rubiks[LEFT]->face[i][2] = up_side_value[2-i];
+    }
+}
+
 void back_clockwise(Face* rubiks[6], R_TYPE type) {
     // Check the R_TYPE
     if (type == HALF) {
@@ -43,3 +72,7 @@ void back_clockwise(Face* rubiks[6], R_TYPE type) {
     }
 }
 
+void up_clockwise(Face* rubiks[6], R_TYPE type);
+void down_clockwise(Face* rubiks[6], R_TYPE type);
+void right_clockwise(Face* rubiks[6], R_TYPE type);
+void left_clockwise(Face* rubiks[6], R_TYPE type);

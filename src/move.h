@@ -11,10 +11,10 @@ void rotate_face(Face* rubiks[6], T_SIDE side, R_TYPE type);
 
 void front_clockwise(Face* rubiks[6], R_TYPE type);
 void back_clockwise(Face* rubiks[6], R_TYPE type);
-void up_clockwise(Face rubiks[6], R_TYPE type);
-void down_clockwise(Face rubiks[6], R_TYPE type);
-void right_clockwise(Face rubiks[6], R_TYPE type);
-void left_clockwise(Face rubiks[6], R_TYPE type);
+void up_clockwise(Face* rubiks[6], R_TYPE type);
+void down_clockwise(Face* rubiks[6], R_TYPE type);
+void right_clockwise(Face* rubiks[6], R_TYPE type);
+void left_clockwise(Face* rubiks[6], R_TYPE type);
 
 void front_anticlockwise(Face rubiks[6], R_TYPE type);
 void back_anticlockwise(Face rubiks[6], R_TYPE type);
