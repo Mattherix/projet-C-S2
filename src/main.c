@@ -10,7 +10,7 @@ int main(void) {
     init_rubiks(rubiks);
 
     rubiks[BACK]->face[0][0] = R;
-    rubiks[FRONT]->face[0][0] = B;
+    rubiks[RIGHT]->face[0][0] = B;
 
     display_rubiks(rubiks);
     printf("\n");
