@@ -190,3 +190,34 @@ void left_clockwise(Face* rubiks[6], R_TYPE type) {
         rubiks[DOWN]->face[i][0] = front_side_value[i];
     }
 }
+
+void front_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        front_clockwise(rubiks, type);
+    }
+}
+void back_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        back_clockwise(rubiks, type);
+    }
+}
+void up_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        up_clockwise(rubiks, type);
+    }
+}
+void down_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        down_clockwise(rubiks, type);
+    }
+}
+void right_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        right_clockwise(rubiks, type);
+    }
+}
+void left_anticlockwise(Face* rubiks[6], R_TYPE type) {
+    for (int i = 0; i < 3; ++i) {
+        left_clockwise(rubiks, type);
+    }
+}
