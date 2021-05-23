@@ -45,3 +45,9 @@ Début
         Fin Pour
     Fin Pour
 Fin
+
+Fonction display_rubiks
+Fonction blank_rubiks
+Fonction fill_rubiks
+Fonction scramble_rubiks
+Fonction free_rubiks
