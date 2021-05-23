@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "cube.c"
+#include "move.c"
 
 
 int main(void) {
@@ -8,11 +9,16 @@ int main(void) {
     printf("%d \n", rubiks[2]->side);
     init_rubiks(rubiks);
 
-    display_rubiks(rubiks);
+    rubiks[BACK]->face[0][0] = R;
+    rubiks[FRONT]->face[0][0] = B;
 
-    fill_rubiks(rubiks);
+    display_rubiks(rubiks);
+    printf("\n");
+
+    rotate_face(rubiks, FRONT, QUARTER);
 
     display_rubiks(rubiks);
+    printf("\n");
 
     free_rubiks(rubiks);
 
