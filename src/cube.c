@@ -45,7 +45,9 @@ void display_array_face(Face* rubiks[6], T_SIDE side[], int lenght, bool space) 
         }
         for (int index = 0; index < lenght; ++index) {
             for (int j = 0; j < 3; ++j) {
-                printf("%s %c%s", get_color_code(rubiks[side[index]]->face[i][j]), rubiks[side[index]]->face[i][j], NONE);
+                printf("%s %c%s",
+                       get_color_code(rubiks[side[index]]->face[i][j]),
+                       rubiks[side[index]]->face[i][j], NONE);
             }
         }
         printf("\n");
