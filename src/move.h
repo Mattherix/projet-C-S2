@@ -23,6 +23,6 @@ void down_anticlockwise(Face* rubiks[6], R_TYPE type);
 void right_anticlockwise(Face* rubiks[6], R_TYPE type);
 void left_anticlockwise(Face* rubiks[6], R_TYPE type);
 
-void move_rubiks(Face rubiks[6]);
+// Les autres movements sont inutile pour l'algo de résolution
 
 #endif //PROJECT_C_MOVE_H

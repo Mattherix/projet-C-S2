@@ -183,7 +183,7 @@ void scramble_rubiks(Face* rubiks[6]) {
     time_t t;
     srand((unsigned) time(&t));
 
-    int n = rand() % 1000;
+    int n = rand() % 10;
     for (int j = 0; j < n; ++j) {
         int choice = rand() % 24;
         switch (choice) {

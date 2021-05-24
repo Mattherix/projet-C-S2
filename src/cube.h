@@ -1,9 +1,3 @@
-//
-// Created by matthieu on 14/05/2021.
-//
-// Function to represent the cube
-//
-
 #ifndef PROJECT_C_CUBE_H
 #define PROJECT_C_CUBE_H
 
