@@ -9,13 +9,13 @@ int main(void) {
     printf("%d \n", rubiks[2]->side);
     init_rubiks(rubiks);
 
-    rubiks[BACK]->face[0][0] = R;
-    rubiks[LEFT]->face[0][0] = B;
-
     display_rubiks(rubiks);
     printf("\n");
 
-    left_clockwise(rubiks, QUARTER);
+    display_rubiks(rubiks);
+
+    printf("\n");
+    scramble_rubiks(rubiks);
 
     display_rubiks(rubiks);
     printf("\n");

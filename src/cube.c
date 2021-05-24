@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "main.h"
 #include "cube.h"
 #include "color.c"
 #include "enum.c"
+#include "move.h"
 
 Face* create_face(T_SIDE side) {
     Face *face = malloc(sizeof(Face));
@@ -175,6 +177,92 @@ void fill_rubiks(Face* rubiks[6]) {
         printf("Continuer (0, 1) ? :");
         scanf("%d", &edit);
     } while (edit || !check_if_solvable_cube(rubiks));
+}
+
+void scramble_rubiks(Face* rubiks[6]) {
+    time_t t;
+    srand((unsigned) time(&t));
+
+    int n = rand() % 1000;
+    for (int j = 0; j < n; ++j) {
+        int choice = rand() % 24;
+        switch (choice) {
+            case 0:
+                front_clockwise(rubiks, QUARTER);
+                break;
+            case 1:
+                back_clockwise(rubiks, QUARTER);
+                break;
+            case 2:
+                up_clockwise(rubiks, QUARTER);
+                break;
+            case 3:
+                down_clockwise(rubiks, QUARTER);
+                break;
+            case 4:
+                right_clockwise(rubiks, QUARTER);
+                break;
+            case 5:
+                left_clockwise(rubiks, QUARTER);
+                break;
+
+            case 6:
+                front_clockwise(rubiks, HALF);
+                break;
+            case 7:
+                back_clockwise(rubiks, HALF);
+                break;
+            case 8:
+                up_clockwise(rubiks, HALF);
+                break;
+            case 9:
+                down_clockwise(rubiks, HALF);
+                break;
+            case 10:
+                right_clockwise(rubiks, HALF);
+                break;
+            case 11:
+                left_clockwise(rubiks, HALF);
+                break;
+            case 12:
+                front_anticlockwise(rubiks, QUARTER);
+                break;
+            case 13:
+                back_anticlockwise(rubiks, QUARTER);
+                break;
+            case 14:
+                up_anticlockwise(rubiks, QUARTER);
+                break;
+            case 15:
+                down_anticlockwise(rubiks, QUARTER);
+                break;
+            case 16:
+                right_anticlockwise(rubiks, QUARTER);
+                break;
+            case 17:
+                left_anticlockwise(rubiks, QUARTER);
+                break;
+            case 18:
+                front_anticlockwise(rubiks, HALF);
+                break;
+            case 19:
+                back_anticlockwise(rubiks, HALF);
+                break;
+            case 20:
+                up_anticlockwise(rubiks, HALF);
+                break;
+            case 21:
+                down_anticlockwise(rubiks, HALF);
+                break;
+            case 22:
+                right_anticlockwise(rubiks, HALF);
+                break;
+            case 23:
+                left_anticlockwise(rubiks, HALF);
+                break;
+        }
+    }
+
 }
 
 void free_rubiks(Face* rubiks[6]) {
