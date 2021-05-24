@@ -1,5 +1,9 @@
 # Projet-C-S2
-TODO: Explication rapide du projet
+Un projet pour résoudre des rubik's cube
 
 ## Installation
-TODO: Ecrire les instruction pour installer le projet
+
+```shell
+cd src
+gcc main.c -o rubiks
+```
