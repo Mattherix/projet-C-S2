@@ -1,5 +1,5 @@
 # Projet-C-S2
-Un projet pour résoudre des rubik's cube
+Un projet pour résoudre des rubik's cube, non fini/non fonctionnel.
 
 ## Installation
 
